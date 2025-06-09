@@ -13,7 +13,7 @@ import {
 } from "react-icons/fi";
 import { FaPaperPlane, FaDiscord } from "react-icons/fa";
 import { useProfile } from "../context/profilecontext";
-
+import emailjs from "emailjs-com"
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -29,13 +29,30 @@ const Contact = () => {
     e.preventDefault();
     setIsSending(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Replace these with your actual EmailJS IDs
+    const SERVICE_ID = "service_17yqup8";
+    const TEMPLATE_ID = "template_49esxup";
+    const PUBLIC_KEY = "iVSIObIDotzZw_JY7";
 
-    setSubmitted(true);
-    setForm({ name: "", email: "", message: "" });
-    setIsSending(false);
-    formRef.current.reset();
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        PUBLIC_KEY
+      );
+      setSubmitted(true);
+      setForm({ name: "", email: "", message: "" });
+      setIsSending(false);
+      formRef.current.reset();
+    } catch (error) {
+      alert("Failed to send message. Please try again later.");
+      setIsSending(false);
+    }
   };
 
   return (
