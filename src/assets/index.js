@@ -12,6 +12,8 @@ import todo from './Todo.jpg';
 import profile from './1723540763693.jpg'
 import aws_accredit from './AWS Technical accredited.png'
 import snowflake from './twitter_thumb_201604_SnowProCoreTM600.png'
+import buymeDark from './buy-me-a-coffee-dark.svg'
+import buymeLight from './buyme-light.png'
 const assets = {
     about,
     contact,
@@ -26,7 +28,9 @@ const assets = {
   todo,
   profile,
   aws_accredit,
-  snowflake
+  snowflake,
+  buymeDark,
+  buymeLight
 };
 
 export default assets;

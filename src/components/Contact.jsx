@@ -14,6 +14,9 @@ import {
 import { FaPaperPlane, FaDiscord } from "react-icons/fa";
 import { useProfile } from "../context/profilecontext";
 import emailjs from "emailjs-com"
+import assets from "../assets";
+
+
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -130,22 +133,50 @@ const Contact = () => {
                       />
                       <SocialLink
                         Icon={FiTwitter}
-                        href="https://x.com/Sharankuma61629" // Add your Twitter link here
+                        href="https://x.com/Sharankuma61629"
                         label="Twitter"
                         darkMode={darkMode}
                       />
                       <SocialLink
                         Icon={FiInstagram}
-                        href="https://www.instagram.com/sharan_13_09/" // Add your Instagram link here
+                        href="https://www.instagram.com/sharan_13_09/"
                         label="Instagram"
                         darkMode={darkMode}
                       />
                       <SocialLink
                         Icon={FaDiscord}
-                        href="https://discord.com/users/ereneager8497" // Add your Discord link here
+                        href="https://discord.com/users/ereneager8497"
                         label="Discord"
                         darkMode={darkMode}
                       />
+                      {/* Buy Me a Coffee Support Button */}
+          <motion.a
+            whileHover={{ y: -3, scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            href="https://buymeacoffee.com/sharanclouk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`p-2 ${
+              darkMode
+                ? "bg-[#252538] hover:bg-yellow-500"
+                : "bg-gray-100 hover:bg-yellow-400"
+            } rounded-full transition-all duration-300 relative group shadow-md hover:shadow-lg flex items-center`}
+            aria-label="Support me on Buy Me a Coffee"
+          >
+            <img
+              src={darkMode ? assets.buymeLight : assets.buymeDark}
+              alt="Buy Me a Coffee"
+              className="w-7 h-7"
+              style={{ display: "block" }}
+            />
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileHover={{ opacity: 1, y: 0 }}
+              className="absolute bottom-full mb-2 px-2 py-1 text-xs text-white bg-yellow-500 rounded whitespace-nowrap shadow-lg"
+            >
+              Support me
+            </motion.span>
+          </motion.a>
                     </div>
                   </motion.div>
 
