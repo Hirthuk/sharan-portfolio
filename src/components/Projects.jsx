@@ -23,6 +23,15 @@ const projects = [
     codeLink: "https://buymeacoffee.com/sharanclouk/e/417901",
     accentColor: "bg-rose-500"
   },
+    {
+    title: "Insight Hub",
+    description: "Appraisal forum for workers",
+    tags: ["React, Java, Neon"],
+    image: assets.Personality,
+    liveLink: "https://insighthubteja.netlify.app/",
+    codeLink: "https://github.com/Hirthuk/employers-forum",
+    accentColor: "bg-indigo-500"
+  },
   {
     title: "Sneaker Hub",
     description: "E-commerce platform for premium footwear with modern UI",
@@ -51,15 +60,7 @@ const projects = [
     codeLink: "https://github.com/Hirthuk/React",
     accentColor: "bg-blue-500"
   },
-  {
-    title: "Personality Developer",
-    description: "Self-improvement platform with progress tracking",
-    tags: ["HTML5", "CSS3", "JavaScript"],
-    image: assets.Personality,
-    liveLink: "#",
-    codeLink: "https://github.com/Hirthuk/Personality-Website",
-    accentColor: "bg-indigo-500"
-  }
+
 ];
 
 const defaultOptions = {
