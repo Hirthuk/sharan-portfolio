@@ -5,6 +5,7 @@ import Projects from './components/Projects'
 import Abouts from './components/Abouts'
 import Contact from './components/Contact'
 import { useProfile } from './context/profilecontext'
+import Resume from './components/Resume'
 
 const App = () => {
   const {ham} = useProfile();
@@ -14,6 +15,7 @@ const App = () => {
       <Home/>
       <Projects/>
       <Abouts/>
+      <Resume/>
       <Contact/>
     </div>
   )
