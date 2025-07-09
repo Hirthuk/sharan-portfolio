@@ -9,6 +9,7 @@ const navLinks = [
   { name: "About", href: "#about", icon: assets.about },
   { name: "Skills", href: "#about", icon: assets.skills },
   { name: "Contact", href: "#contact", icon: assets.contact },
+  { name: "Resume", href: "#resume", icon: assets.resume_icon },
 ];
 
 export default function NavBar() {

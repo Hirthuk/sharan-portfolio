@@ -14,6 +14,7 @@ import aws_accredit from './AWS Technical accredited.png'
 import snowflake from './twitter_thumb_201604_SnowProCoreTM600.png'
 import buymeDark from './buy-me-a-coffee-dark.svg'
 import buymeLight from './buyme-light.png'
+import resume_icon from './resume_icon.png'
 const assets = {
     about,
     contact,
@@ -30,7 +31,8 @@ const assets = {
   aws_accredit,
   snowflake,
   buymeDark,
-  buymeLight
+  buymeLight,
+  resume_icon
 };
 
 export default assets;

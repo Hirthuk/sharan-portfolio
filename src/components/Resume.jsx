@@ -5,6 +5,7 @@ const Resume = () => {
 
   return (
     <div
+     id="resume"
       className={`flex flex-col items-center justify-center w-full px-4 py-16 transition-all duration-500 ${
         showResume
           ? "min-h-screen bg-black"
@@ -23,13 +24,13 @@ const Resume = () => {
       {showResume && (
         <div className="w-full max-w-3xl bg-white rounded-xl shadow-2xl p-4 md:p-8">
           <iframe
-            src="/resume.pdf"
+            src="Sharankumar_SoftwareEngineer.pdf"
             title="Resume"
             className="w-full h-[70vh] rounded-lg border-2 border-purple-200"
           />
           <div className="flex justify-end mt-4">
             <a
-              href="/resume.pdf"
+              href="Sharankumar_SoftwareEngineer.pdf"
               download
               className="px-4 py-2 rounded-full bg-purple-500 text-white font-medium hover:bg-purple-600 transition"
             >
