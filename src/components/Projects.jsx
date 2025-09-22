@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
-import Tilt from 'react-parallax-tilt'
+import Tilt from "react-parallax-tilt";
 import assets from "../assets";
 import { useProfile } from "../context/profilecontext";
 
@@ -78,15 +78,19 @@ const defaultOptions = {
 const Projects = () => {
   const handleProjectClick = (liveLink, codeLink) => {
     if (liveLink && liveLink !== "#") {
-      window.open(liveLink, '_blank');
+      window.open(liveLink, "_blank");
     } else if (codeLink) {
-      window.open(codeLink, '_blank');
+      window.open(codeLink, "_blank");
     }
   };
-  
-  const {darkMode} = useProfile();
+
+  const { darkMode } = useProfile();
+
   return (
-    <section id="projects" className="relative py-20 px-4 sm:px-6 lg:px-8  dark:bg-gray-900 overflow-hidden">
+    <section
+      id="projects"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 dark:bg-gray-900 bg-white overflow-hidden"
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 dark:opacity-10 pointer-events-none">
         <div className="absolute top-1/4 left-10 w-80 h-80 rounded-full bg-purple-500 blur-[100px]"></div>
@@ -102,12 +106,16 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2
+            className={`text-5xl font-bold mb-4 ${
+              darkMode ? "text-white" : "text-gray-900"
+            }`}
+          >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
-            Creations
+              Creations
             </span>
           </h2>
-          <p className={`text-lg text-gray-600 ${darkMode ? "text-white" : ""} max-w-2xl mx-auto`}>
+          <p className={`text-lg ${darkMode ? "text-white" : "text-gray-200"} max-w-2xl mx-auto`}>
             Each project is a unique journey of problem-solving and innovation
           </p>
         </motion.div>
@@ -121,13 +129,14 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="h-full flex flex-col border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                className={`h-full flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer group
+                  ${darkMode ? "border border-gray-700 bg-gray-800 text-gray-100 hover:shadow-2xl" : "border border-gray-200 bg-white text-gray-900 hover:shadow-xl"}`}
                 onClick={() => handleProjectClick(project.liveLink, project.codeLink)}
               >
                 {/* Project Image with Glow Effect */}
                 <div className="relative h-48 overflow-hidden">
                   <div className={`absolute inset-0 ${project.accentColor} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
                   <img
                     src={project.image}
                     alt={project.title}
@@ -136,7 +145,7 @@ const Projects = () => {
                       e.target.src = "https://via.placeholder.com/600x400?text=Project+Preview";
                     }}
                   />
-                  
+
                   {/* Floating buttons */}
                   <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     {project.liveLink !== "#" && (
@@ -163,23 +172,23 @@ const Projects = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6 flex-grow flex flex-col bg-white dark:bg-gray-800">
+                <div className={`p-6 flex-grow flex flex-col ${darkMode ? "bg-gray-800" : "bg-white"}`}>
                   <div className="flex-grow">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300">
+                    <h3 className={`text-xl font-bold mb-2 ${darkMode ? "text-gray-100" : "text-gray-900"} transition-colors`}>
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    <p className={`${darkMode ? "text-gray-300" : "text-gray-600"} mb-4`}>
                       {project.description}
                     </p>
                   </div>
-                  
-                  {/* Tags with animated border */}
+
+                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.tags.map((tag, tagIndex) => (
                       <motion.span
                         key={tagIndex}
                         whileHover={{ scale: 1.05 }}
-                        className={`px-3 py-1 ${project.accentColor} bg-opacity-10 text-black dark:text-black rounded-full text-xs font-medium border border-transparent group-hover:border-${project.accentColor.split('-')[1]}-500 transition-all duration-300`}
+                        className={`px-3 py-1 ${project.accentColor} bg-opacity-10 rounded-full text-xs font-medium ${darkMode ? "text-gray-100" : "text-gray-800"} transition-all duration-300`}
                       >
                         {tag}
                       </motion.span>
